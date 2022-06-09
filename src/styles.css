@@ -1,0 +1,92 @@
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+li {
+  height: auto;
+  flex-grow: 0;
+}
+
+li:last-child {
+  flex-grow: 1;
+}
+
+img {
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: none;
+  vertical-align: bottom;
+}
+
+
+@media (max-aspect-ratio: 1/1) {
+  li {
+    height: auto;
+  }
+}
+
+
+@media (max-height: 480px) {
+  li {
+    height: auto;
+  }
+}
+
+
+@media (max-aspect-ratio: 1/1) and (max-width: 480px) {
+  ul {
+    flex-direction: row;
+  }
+
+  li {
+    height: auto;
+    width: 100%;
+  }
+  img {
+    width: 100%;
+    max-height: 100vh;
+    min-width: 0;
+  }
+}
+
+
+.bg-image {
+    background-image: none;
+    background-color: #F1F1FA;
+ }
+
+.lazyColor {
+background: linear-gradient(135deg, rgba(211,223,232,.5) 30%,rgba(169,184,197,.5) 38%,rgba(168,182,193,.6) 41%,rgba(168,182,193,.6) 50%,rgba(168,182,193,.6) 50%,rgba(169,184,197,.6) 51%,rgba(211,223,232,.6) 57%,rgba(211,223,232,.6) 80%,rgba(211,223,232,.6) 80%);
+background-size: 1200% 1200%;
+
+-webkit-animation: AnimationName 2s ease infinite reverse;
+-moz-animation: AnimationName 2s ease infinite reverse;
+animation: AnimationName 2s ease infinite reverse;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 92%}
+    50%{background-position:100% 9%}
+    100%{background-position:0% 92%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 92%}
+    50%{background-position:100% 9%}
+    100%{background-position:0% 92%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 92%}
+    100%{background-position:100% 9%}
+/*     100%{background-position:0% 92%} */
+}
+
+.text-wine{
+  color: #5a0017;
+}
+
+img:not([src]):not([srcset]) {
+  visibility: hidden;
+}
